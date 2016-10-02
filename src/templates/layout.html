@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Frequency - {{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/freq/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/freq/content/site.css" />
+    <script src="/static/freq/scripts/modernizr-2.6.2.js"></script>
+    <style>
+        .container-fluid {
+            padding-right:10px;
+            padding-left:10px;
+        }    
+        .top5{
+            padding-top:5px;
+        }
+        .bottom5{
+            padding-bottom:5px;
+        }
+        .filtered_sum{
+            color:blue;
+        }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{{ url_for('parseFile') }}" class="navbar-brand">Freq</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('parseFile') }}">File</a></li>
+                    <li><a href="{{ url_for('parseURL') }}">URL</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        {% block content %}{% endblock %}
+        <hr />
+        <footer>
+            <p>&copy; murphytalk 2016 - {{ year }}</p>
+        </footer>
+    </div>
+
+    <script src="/static/freq/scripts/jquery-1.10.2.min.js"></script>
+    <script src="/static/freq/scripts/bootstrap.js"></script>
+    <script src="/static/freq/scripts/respond.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

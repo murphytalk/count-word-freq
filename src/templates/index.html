@@ -1,0 +1,43 @@
+{% extends "datatable.html" %}
+
+{% block content %}
+{{ super() }}
+<div class="row top5 bottom5">
+    <div class="col-md-12">
+        <label class="btn btn-default btn-file">
+            Browse <input type="file" style="display: none;">
+        </label>
+    </div>
+</div>
+<div class="row top5 bottom5">
+    <div class="col-md-12">
+        <table class="table table-hover" id="freq">
+            <thead>
+            <tr>
+                <th class="text-left`">Word</th>
+                <th class="text-Right">Count</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th class="text-left">
+                    <div id="word"></div>
+                </th>
+                <th class="text-right">
+                    <div id="count"></div>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+<script>
+
+</script>
+{% endblock %}
